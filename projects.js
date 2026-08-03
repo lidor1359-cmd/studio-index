@@ -5,3 +5,31 @@ window.STUDIO_PROJECTS = {
   lidorprivatejets: { local: '../lidorprivatejets/dist/index.html', production: 'https://lidorprivatejets-hpvmfo048-lidor-levins-projects.vercel.app' },
   venizio: { local: '../venizio/site/index.html', production: 'https://site-kb31c9jr3-lidor-levins-projects.vercel.app' },
 };
+
+const projectDirectory = [
+  { key: 'gitsis-real-estate', name: 'Gitsis Real Estate', type: 'Real estate' },
+  { key: 'lidorprivatejets', name: 'Lidor Private Jets', type: 'Aviation' },
+  { key: 'venizio', name: 'Venizio', type: 'Hospitality' },
+];
+
+const menu = document.querySelector('.projects-menu');
+const toggle = document.querySelector('.projects-toggle');
+const closeButton = document.querySelector('.projects-menu__close');
+const directory = document.querySelector('.projects-menu__links');
+
+directory.innerHTML = projectDirectory.map(({ key, name, type }, index) => {
+  const url = window.STUDIO_PROJECTS[key].production;
+  return `<a href="${url}"><span>${String(index + 1).padStart(2, '0')} / ${type}</span>${name}<span aria-hidden="true">↗</span></a>`;
+}).join('');
+
+function setMenu(open) {
+  menu.classList.toggle('is-open', open);
+  menu.setAttribute('aria-hidden', String(!open));
+  toggle.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('menu-open', open);
+  if (open) closeButton.focus();
+}
+
+toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+closeButton.addEventListener('click', () => setMenu(false));
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });

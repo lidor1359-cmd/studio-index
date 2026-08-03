@@ -10,6 +10,7 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Studio Index home">STUDIO<br />INDEX</a>
+      <button class="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-menu">Projects <span aria-hidden="true">+</span></button>
       <p class="header-note">SELECTED DIGITAL EXPERIENCES<br /><span>2026</span></p>
     </header>
 
@@ -51,6 +52,11 @@
     </main>
 
     <footer class="site-footer"><span>STUDIO INDEX</span><span>More projects coming soon.</span></footer>
+    <aside class="projects-menu" id="projects-menu" aria-label="All projects" aria-hidden="true">
+      <div class="projects-menu__top"><span>ALL PROJECTS</span><button class="projects-menu__close" type="button" aria-label="Close project menu">Close <span aria-hidden="true">×</span></button></div>
+      <nav class="projects-menu__links" aria-label="Project directory"></nav>
+      <p class="projects-menu__note">A growing library of individual worlds.</p>
+    </aside>
     <script src="projects.js"></script>
   </body>
 </html>
