@@ -38,9 +38,10 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const projectLinks = [...document.querySelectorAll('.project-link')];
 
 if (!reduceMotion) {
+  const visibleLinks = new Set(projectLinks);
   const updateDepth = () => {
     const viewportCenter = window.innerHeight / 2;
-    projectLinks.forEach((link) => {
+    visibleLinks.forEach((link) => {
       const bounds = link.getBoundingClientRect();
       const offset = Math.max(-1, Math.min(1, (bounds.top + bounds.height / 2 - viewportCenter) / window.innerHeight));
       link.style.setProperty('--image-parallax', `${Math.round(offset * -24)}px`);
@@ -52,6 +53,16 @@ if (!reduceMotion) {
     cancelAnimationFrame(animationFrame);
     animationFrame = requestAnimationFrame(updateDepth);
   }, { passive: true });
+  if ('IntersectionObserver' in window) {
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (isIntersecting) visibleLinks.add(target);
+        else visibleLinks.delete(target);
+      });
+      updateDepth();
+    }, { rootMargin: '180px 0px' });
+    projectLinks.forEach((link) => visibilityObserver.observe(link));
+  }
   updateDepth();
 
   if (window.matchMedia('(pointer: fine)').matches) {
