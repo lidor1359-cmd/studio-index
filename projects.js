@@ -1,15 +1,15 @@
 // One source of truth for project destinations.
 window.STUDIO_PROJECTS = {
   hub: { local: './index.html', production: 'https://studio-hub-nu.vercel.app' },
-  'gitsis-real-estate': { local: '../gitsis-real-estate/index.html', production: 'https://gitsis-real-estate.vercel.app' },
-  lidorprivatejets: { local: '../lidorprivatejets/dist/index.html', production: 'https://lidorprivatejets.vercel.app' },
-  venizio: { local: '../venizio/site/index.html', production: 'https://site-gamma-nine-25.vercel.app' },
+  'gitsis-real-estate': { local: '../gitsis-real-estate/index.html', production: 'https://gitsis-real-estate-lidor-levins-projects.vercel.app' },
+  lidorprivatejets: { local: '../lidorprivatejets/dist/index.html', production: 'https://lidorprivatejets-lidor-levins-projects.vercel.app' },
+  venizio: { local: '../venizio/site/index.html', production: 'https://site-lidor-levins-projects.vercel.app' },
 };
 
 const projectDirectory = [
-  { key: 'gitsis-real-estate', name: 'Gitsis Real Estate', type: 'Real estate', image: 'https://gitsis-real-estate.vercel.app/assets/web/hero.jpg' },
-  { key: 'lidorprivatejets', name: 'Lidor Private Jets', type: 'Aviation', image: 'https://lidorprivatejets.vercel.app/images/hero-golden.jpg' },
-  { key: 'venizio', name: 'Venizio', type: 'Hospitality', image: 'https://site-gamma-nine-25.vercel.app/assets/og-card.jpg' },
+  { key: 'gitsis-real-estate', name: 'Gitsis Real Estate', type: 'Real estate', image: 'https://gitsis-real-estate-lidor-levins-projects.vercel.app/assets/web/hero.jpg' },
+  { key: 'lidorprivatejets', name: 'Lidor Private Jets', type: 'Aviation', image: 'https://lidorprivatejets-lidor-levins-projects.vercel.app/images/hero-golden.jpg' },
+  { key: 'venizio', name: 'Venizio', type: 'Hospitality', image: 'https://site-lidor-levins-projects.vercel.app/assets/og-card.jpg' },
 ];
 
 const menu = document.querySelector('.projects-menu');

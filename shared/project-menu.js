@@ -1,8 +1,8 @@
 const projects = [
   ['hub', 'Studio Index', 'https://studio-hub-nu.vercel.app'],
-  ['gitsis', 'Gitsis Real Estate', 'https://gitsis-real-estate.vercel.app'],
-  ['jets', 'Lidor Private Jets', 'https://lidorprivatejets.vercel.app'],
-  ['venizio', 'Venizio', 'https://site-gamma-nine-25.vercel.app'],
+  ['gitsis', 'Gitsis Real Estate', 'https://gitsis-real-estate-lidor-levins-projects.vercel.app'],
+  ['jets', 'Lidor Private Jets', 'https://lidorprivatejets-lidor-levins-projects.vercel.app'],
+  ['venizio', 'Venizio', 'https://site-lidor-levins-projects.vercel.app'],
 ];
 
 class ProjectMenu extends HTMLElement {
