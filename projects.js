@@ -33,3 +33,40 @@ function setMenu(open) {
 toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
 closeButton.addEventListener('click', () => setMenu(false));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const projectLinks = [...document.querySelectorAll('.project-link')];
+
+if (!reduceMotion) {
+  const updateDepth = () => {
+    const viewportCenter = window.innerHeight / 2;
+    projectLinks.forEach((link) => {
+      const bounds = link.getBoundingClientRect();
+      const offset = Math.max(-1, Math.min(1, (bounds.top + bounds.height / 2 - viewportCenter) / window.innerHeight));
+      link.style.setProperty('--image-parallax', `${Math.round(offset * -24)}px`);
+    });
+  };
+
+  let animationFrame;
+  window.addEventListener('scroll', () => {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = requestAnimationFrame(updateDepth);
+  }, { passive: true });
+  updateDepth();
+
+  if (window.matchMedia('(pointer: fine)').matches) {
+    projectLinks.forEach((link) => {
+      link.addEventListener('pointermove', (event) => {
+        const bounds = link.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - .5;
+        const y = (event.clientY - bounds.top) / bounds.height - .5;
+        link.style.setProperty('--tilt-x', `${(-y * 3).toFixed(2)}deg`);
+        link.style.setProperty('--tilt-y', `${(x * 3).toFixed(2)}deg`);
+      });
+      link.addEventListener('pointerleave', () => {
+        link.style.setProperty('--tilt-x', '0deg');
+        link.style.setProperty('--tilt-y', '0deg');
+      });
+    });
+  }
+}
