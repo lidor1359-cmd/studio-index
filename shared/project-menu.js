@@ -1,5 +1,5 @@
 const projects = [
-  ['hub', 'VoxAI', 'https://studio-hub-nu.vercel.app'],
+  ['hub', 'Cortex', 'https://studio-hub-nu.vercel.app'],
   ['gitsis', 'Gitsis Real Estate', 'https://gitsis-real-estate-lidor-levins-projects.vercel.app'],
   ['jets', 'Lidor Private Jets', 'https://lidorprivatejets-lidor-levins-projects.vercel.app'],
   ['venizio', 'Venizio', 'https://site-lidor-levins-projects.vercel.app'],
