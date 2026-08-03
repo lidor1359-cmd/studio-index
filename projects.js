@@ -7,9 +7,9 @@ window.STUDIO_PROJECTS = {
 };
 
 const projectDirectory = [
-  { key: 'gitsis-real-estate', name: 'Gitsis Real Estate', type: 'Real estate' },
-  { key: 'lidorprivatejets', name: 'Lidor Private Jets', type: 'Aviation' },
-  { key: 'venizio', name: 'Venizio', type: 'Hospitality' },
+  { key: 'gitsis-real-estate', name: 'Gitsis Real Estate', type: 'Real estate', image: 'https://gitsis-real-estate-nt2h0dhjg-lidor-levins-projects.vercel.app/assets/web/hero.jpg' },
+  { key: 'lidorprivatejets', name: 'Lidor Private Jets', type: 'Aviation', image: 'https://lidorprivatejets-hpvmfo048-lidor-levins-projects.vercel.app/images/hero-golden.jpg' },
+  { key: 'venizio', name: 'Venizio', type: 'Hospitality', image: 'https://site-kb31c9jr3-lidor-levins-projects.vercel.app/assets/og-card.jpg' },
 ];
 
 const menu = document.querySelector('.projects-menu');
@@ -17,9 +17,9 @@ const toggle = document.querySelector('.projects-toggle');
 const closeButton = document.querySelector('.projects-menu__close');
 const directory = document.querySelector('.projects-menu__links');
 
-directory.innerHTML = projectDirectory.map(({ key, name, type }, index) => {
+directory.innerHTML = projectDirectory.map(({ key, name, type, image }, index) => {
   const url = window.STUDIO_PROJECTS[key].production;
-  return `<a href="${url}"><span>${String(index + 1).padStart(2, '0')} / ${type}</span>${name}<span aria-hidden="true">↗</span></a>`;
+  return `<a href="${url}" style="--preview: url('${image}')"><span>${String(index + 1).padStart(2, '0')} / ${type}</span>${name}<span aria-hidden="true">↗</span></a>`;
 }).join('');
 
 function setMenu(open) {
