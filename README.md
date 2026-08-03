@@ -1,4 +1,4 @@
-# Studio Index
+# VoxAI
 
 The central portfolio hub for the studio's web projects.
 
