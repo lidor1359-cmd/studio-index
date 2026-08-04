@@ -7,6 +7,7 @@
 | [cinematic-project-gallery](./components/cinematic-project-gallery/SKILL.md) | רכיב | הצגת פרויקטים כגלריה ויזואלית | Siena Film |
 | [project-metadata-card](./components/project-metadata-card/SKILL.md) | רכיב | כרטיס פרויקט עם פרטי עומק | Siena Film |
 | [drag-scroll-gallery](./animations/drag-scroll-gallery/SKILL.md) | אנימציה | חקר גלריה בגרירה/גלילה | Siena Film |
+| [scroll-depth-media-reel](./animations/scroll-depth-media-reel/SKILL.md) | אנימציה | מדיה בשכבות עומק לאורך גלילה | Kýma Athens |
 | [project-catalog-registry](./components/project-catalog-registry/SKILL.md) | רכיב | ניהול פרויקטים ממקור נתונים יחיד | WebForge |
 | [spatial-project-focus](./components/spatial-project-focus/SKILL.md) | רכיב | מסגרת זכוכית ועומק מצלמה לפרויקט פעיל | WebForge |
 | [life-stage-program-navigator](./components/life-stage-program-navigator/SKILL.md) | רכיב | בחירת תוכנית לפי צורך או שלב חיים | Maxima Therapy |

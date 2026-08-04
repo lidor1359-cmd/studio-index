@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scroll Depth Media Reel"
+  short_description: "Create layered 3D scroll media"
+  default_prompt: "Use $scroll-depth-media-reel to add a cinematic depth sequence to a landing page."
