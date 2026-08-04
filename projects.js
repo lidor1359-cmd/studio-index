@@ -46,6 +46,55 @@ if ('IntersectionObserver' in window && archiveSlides.length) {
   archiveSlides.forEach((slide) => archiveObserver.observe(slide));
 }
 
+const spatialStage = document.querySelector('[data-archive-stage]');
+const spatialProjects = [...document.querySelectorAll('[data-spatial-project]')];
+const archiveButtons = [...document.querySelectorAll('[data-archive-target]')];
+const archiveReadout = {
+  count: document.querySelector('[data-archive-count]'),
+  name: document.querySelector('[data-archive-name]'),
+  category: document.querySelector('[data-archive-category]'),
+  location: document.querySelector('[data-archive-location]'),
+};
+if (spatialStage && spatialProjects.length) {
+  let activeProject = -1;
+  const updateSpatialArchive = () => {
+    const bounds = spatialStage.getBoundingClientRect();
+    const range = Math.max(1, spatialStage.offsetHeight - window.innerHeight);
+    const progress = Math.max(0, Math.min(1, -bounds.top / range));
+    const position = progress * (spatialProjects.length - 1);
+    const nextActive = Math.round(position);
+    spatialProjects.forEach((project, index) => {
+      const distance = index - position;
+      const absoluteDistance = Math.abs(distance);
+      project.style.setProperty('--space-x', (distance * 58).toFixed(2));
+      project.style.setProperty('--space-y', (distance * -5).toFixed(2));
+      project.style.setProperty('--space-z', `${Math.round(-absoluteDistance * 280)}px`);
+      project.style.setProperty('--space-scale', Math.max(.62, 1 - absoluteDistance * .18).toFixed(3));
+      project.style.setProperty('--space-opacity', absoluteDistance > 1.5 ? '0' : Math.max(.26, 1 - absoluteDistance * .5).toFixed(2));
+    });
+    if (nextActive !== activeProject) {
+      activeProject = nextActive;
+      const project = spatialProjects[activeProject];
+      archiveButtons.forEach((button, index) => button.classList.toggle('is-active', index === activeProject));
+      archiveReadout.count.textContent = `${String(activeProject + 1).padStart(2, '0')} / ${String(spatialProjects.length).padStart(2, '0')}`;
+      archiveReadout.name.textContent = project.dataset.name;
+      archiveReadout.category.textContent = project.dataset.category;
+      archiveReadout.location.textContent = project.dataset.location;
+    }
+  };
+  let archiveFrame;
+  window.addEventListener('scroll', () => {
+    cancelAnimationFrame(archiveFrame);
+    archiveFrame = requestAnimationFrame(updateSpatialArchive);
+  }, { passive: true });
+  archiveButtons.forEach((button) => button.addEventListener('click', () => {
+    const index = Number(button.dataset.archiveTarget);
+    const top = spatialStage.offsetTop + (spatialStage.offsetHeight - window.innerHeight) * (index / (spatialProjects.length - 1));
+    window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }));
+  updateSpatialArchive();
+}
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const projectLinks = [...document.querySelectorAll('.project-link')];
 

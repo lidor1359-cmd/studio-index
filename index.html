@@ -17,41 +17,30 @@
       <p class="header-note">SELECTED DIGITAL EXPERIENCES<br /><span>2026</span></p>
     </header>
 
-    <main id="top" class="archive">
-      <p class="archive-prompt">SCROLL TO EXPLORE <i aria-hidden="true">↓</i></p>
-      <nav class="archive-index" aria-label="Quick project navigation">
-        <a class="is-active" href="#gitsis"><span>01</span> GITSIS</a>
-        <a href="#jets"><span>02</span> JETS</a>
-        <a href="#venizio"><span>03</span> VENIZIO</a>
-      </nav>
-      <section class="archive-slides" aria-label="Selected projects">
-        <article class="archive-slide" id="gitsis" data-archive-slide>
-          <a class="archive-link" href="https://gitsis-real-estate-lidor-levins-projects.vercel.app">
+    <main id="top" class="archive-experience" data-archive-stage>
+      <section class="archive-canvas" aria-label="WebForge project archive">
+        <p class="archive-kicker">WEBFORGE / PROJECT ARCHIVE</p>
+        <p class="archive-instruction">SCROLL TO NAVIGATE <i aria-hidden="true">↓</i></p>
+        <nav class="archive-index" aria-label="Quick project navigation">
+          <button class="is-active" type="button" data-archive-target="0"><span>01</span> GITSIS</button>
+          <button type="button" data-archive-target="1"><span>02</span> JETS</button>
+          <button type="button" data-archive-target="2"><span>03</span> VENIZIO</button>
+        </nav>
+        <div class="project-space">
+          <a class="spatial-project" data-spatial-project data-name="Gitsis Real Estate" data-category="REAL ESTATE" data-location="CYPRUS" href="https://gitsis-real-estate-lidor-levins-projects.vercel.app">
             <img src="https://gitsis-real-estate-lidor-levins-projects.vercel.app/assets/web/hero.jpg" alt="Coastal villa for Gitsis Real Estate" fetchpriority="high" />
-            <div class="archive-shade"></div>
-            <p class="archive-number">01 / 03</p>
-            <p class="archive-kind">REAL ESTATE<br />2026 / CYPRUS</p>
-            <div class="archive-copy"><p>Private villas and coastal living in Limassol.</p><h1>Gitsis<br /><em>Real Estate</em></h1><span>ENTER PROJECT <i aria-hidden="true">↗</i></span></div>
+            <span class="spatial-project__shade"></span><span class="spatial-project__label"><b>01</b> GITSIS REAL ESTATE <i>↗</i></span>
           </a>
-        </article>
-        <article class="archive-slide" id="jets" data-archive-slide>
-          <a class="archive-link" href="https://lidorprivatejets-lidor-levins-projects.vercel.app">
+          <a class="spatial-project" data-spatial-project data-name="Lidor Private Jets" data-category="AVIATION" data-location="WORLDWIDE" href="https://lidorprivatejets-lidor-levins-projects.vercel.app">
             <img src="https://lidorprivatejets-lidor-levins-projects.vercel.app/images/hero-golden.jpg" alt="Private jet above the clouds" loading="lazy" />
-            <div class="archive-shade"></div>
-            <p class="archive-number">02 / 03</p>
-            <p class="archive-kind">AVIATION<br />2026 / WORLDWIDE</p>
-            <div class="archive-copy"><p>Private aviation, anywhere in the world.</p><h1>Lidor<br /><em>Private Jets</em></h1><span>ENTER PROJECT <i aria-hidden="true">↗</i></span></div>
+            <span class="spatial-project__shade"></span><span class="spatial-project__label"><b>02</b> LIDOR PRIVATE JETS <i>↗</i></span>
           </a>
-        </article>
-        <article class="archive-slide" id="venizio" data-archive-slide>
-          <a class="archive-link" href="https://site-lidor-levins-projects.vercel.app">
+          <a class="spatial-project" data-spatial-project data-name="Venizio" data-category="HOSPITALITY" data-location="ISRAEL" href="https://site-lidor-levins-projects.vercel.app">
             <img src="https://site-lidor-levins-projects.vercel.app/assets/og-card.jpg" alt="Venizio espresso machine and cup" loading="lazy" />
-            <div class="archive-shade"></div>
-            <p class="archive-number">03 / 03</p>
-            <p class="archive-kind">HOSPITALITY<br />2026 / ISRAEL</p>
-            <div class="archive-copy"><p>Specialty coffee for Israel’s hospitality world.</p><h1><em>Venizio</em></h1><span>ENTER PROJECT <i aria-hidden="true">↗</i></span></div>
+            <span class="spatial-project__shade"></span><span class="spatial-project__label"><b>03</b> VENIZIO <i>↗</i></span>
           </a>
-        </article>
+        </div>
+        <aside class="archive-readout" aria-live="polite"><span data-archive-count>01 / 03</span><strong data-archive-name>Gitsis Real Estate</strong><p><span data-archive-category>REAL ESTATE</span> / <span data-archive-location>CYPRUS</span></p></aside>
       </section>
     </main>
 
