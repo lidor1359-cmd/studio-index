@@ -38,6 +38,53 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const projectLinks = [...document.querySelectorAll('.project-link')];
 
 if (!reduceMotion) {
+  const galleryTrack = document.querySelector('[data-drag-scroll]');
+  if (galleryTrack && window.matchMedia('(pointer: fine)').matches) {
+    let pointerStartX = 0;
+    let scrollStart = 0;
+    let dragged = false;
+    let suppressClick = false;
+    galleryTrack.addEventListener('pointerdown', (event) => {
+      pointerStartX = event.clientX;
+      scrollStart = galleryTrack.scrollLeft;
+      dragged = false;
+      galleryTrack.setPointerCapture(event.pointerId);
+    });
+    galleryTrack.addEventListener('pointermove', (event) => {
+      if (!galleryTrack.hasPointerCapture(event.pointerId)) return;
+      const distance = event.clientX - pointerStartX;
+      if (Math.abs(distance) > 5) dragged = true;
+      if (dragged) {
+        galleryTrack.classList.add('is-dragging');
+        galleryTrack.scrollLeft = scrollStart - distance;
+      }
+    });
+    const stopDrag = (event) => {
+      if (!galleryTrack.hasPointerCapture(event.pointerId)) return;
+      galleryTrack.releasePointerCapture(event.pointerId);
+      galleryTrack.classList.remove('is-dragging');
+      suppressClick = dragged;
+      window.setTimeout(() => { suppressClick = false; }, 0);
+    };
+    galleryTrack.addEventListener('pointerup', stopDrag);
+    galleryTrack.addEventListener('pointercancel', stopDrag);
+    galleryTrack.addEventListener('click', (event) => {
+      if (suppressClick) event.preventDefault();
+    }, true);
+  }
+  const intro = document.querySelector('.intro');
+  const orb = document.querySelector('.intro-orb');
+  if (intro && orb && window.matchMedia('(pointer: fine)').matches) {
+    intro.addEventListener('pointermove', (event) => {
+      const bounds = intro.getBoundingClientRect();
+      orb.style.setProperty('--orb-x', `${Math.round(((event.clientX - bounds.left) / bounds.width - .5) * 34)}px`);
+      orb.style.setProperty('--orb-y', `${Math.round(((event.clientY - bounds.top) / bounds.height - .5) * 24)}px`);
+    });
+    intro.addEventListener('pointerleave', () => {
+      orb.style.setProperty('--orb-x', '0px');
+      orb.style.setProperty('--orb-y', '0px');
+    });
+  }
   const visibleLinks = new Set(projectLinks);
   const updateDepth = () => {
     const viewportCenter = window.innerHeight / 2;
