@@ -8,6 +8,7 @@
 | [project-metadata-card](./components/project-metadata-card/SKILL.md) | רכיב | כרטיס פרויקט עם פרטי עומק | Siena Film |
 | [drag-scroll-gallery](./animations/drag-scroll-gallery/SKILL.md) | אנימציה | חקר גלריה בגרירה/גלילה | Siena Film |
 | [project-catalog-registry](./components/project-catalog-registry/SKILL.md) | רכיב | ניהול פרויקטים ממקור נתונים יחיד | WebForge |
+| [spatial-project-focus](./components/spatial-project-focus/SKILL.md) | רכיב | מסגרת זכוכית ועומק מצלמה לפרויקט פעיל | WebForge |
 
 ## כלל הוספה
 

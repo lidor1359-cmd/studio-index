@@ -63,15 +63,18 @@ if (spatialStage && spatialProjects.length) {
     spatialProjects.forEach((project, index) => {
       const distance = index - position;
       const absoluteDistance = Math.abs(distance);
-      project.style.setProperty('--space-x', (distance * 4).toFixed(2));
-      project.style.setProperty('--space-y', (distance * 92).toFixed(2));
+      project.style.setProperty('--space-x', `${(distance * 4).toFixed(2)}vw`);
+      project.style.setProperty('--space-y', `${(distance * 92).toFixed(2)}vh`);
       project.style.setProperty('--space-z', `${Math.round(-absoluteDistance * 280)}px`);
+      project.style.setProperty('--space-rotate-y', `${(-distance * .88).toFixed(2)}deg`);
+      project.style.setProperty('--space-rotate-x', `${(distance * 7.36).toFixed(2)}deg`);
       project.style.setProperty('--space-scale', Math.max(.62, 1 - absoluteDistance * .18).toFixed(3));
       project.style.setProperty('--space-opacity', absoluteDistance > 1.5 ? '0' : Math.max(.26, 1 - absoluteDistance * .5).toFixed(2));
     });
     if (nextActive !== activeProject) {
       activeProject = nextActive;
       const project = spatialProjects[activeProject];
+      spatialProjects.forEach((item, index) => item.classList.toggle('is-current', index === activeProject));
       archiveButtons.forEach((button, index) => button.classList.toggle('is-active', index === activeProject));
       archiveReadout.count.textContent = `${String(activeProject + 1).padStart(2, '0')} / ${String(spatialProjects.length).padStart(2, '0')}`;
       archiveReadout.name.textContent = project.dataset.name;
@@ -89,6 +92,23 @@ if (spatialStage && spatialProjects.length) {
     const top = spatialStage.offsetTop + (spatialStage.offsetHeight - window.innerHeight) * (index / (spatialProjects.length - 1));
     window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
   }));
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
+    spatialStage.addEventListener('pointermove', (event) => {
+      const bounds = spatialStage.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - .5;
+      const y = (event.clientY - bounds.top) / window.innerHeight - .5;
+      const project = spatialProjects[activeProject];
+      if (!project) return;
+      project.style.setProperty('--camera-x', `${(x * 2.2).toFixed(2)}deg`);
+      project.style.setProperty('--camera-y', `${(-y * 1.5).toFixed(2)}deg`);
+    });
+    spatialStage.addEventListener('pointerleave', () => {
+      const project = spatialProjects[activeProject];
+      if (!project) return;
+      project.style.setProperty('--camera-x', '0deg');
+      project.style.setProperty('--camera-y', '0deg');
+    });
+  }
   updateSpatialArchive();
 }
 
