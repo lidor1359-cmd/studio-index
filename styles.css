@@ -30,5 +30,8 @@
 .spatial-project { --space-rotate-x: 0deg; --space-rotate-y: 0deg; pointer-events: none; transform: translate3d(-50%, -50%, var(--space-z)) translate3d(var(--space-x), var(--space-y), 0) rotateY(calc(var(--space-rotate-y) + var(--camera-x))) rotateX(calc(var(--space-rotate-x) + var(--camera-y))) scale(var(--space-scale)); }
 .spatial-project.is-current { z-index: 2; pointer-events: auto; cursor: pointer; touch-action: manipulation; }
 .spatial-project__open { position: absolute; z-index: 10; inset: 0; display: block; }
-.spatial-project__label i { position: relative; z-index: 5; display: grid; width: 34px; height: 34px; place-items: center; margin: -8px -8px -8px auto; border-radius: 50%; transition: color .2s, background .2s, transform .2s; }
-.spatial-project.is-current:hover .spatial-project__label i { color: #07101d; background: #d9ebff; transform: translate(2px, -2px); }
+.spatial-project::after { display: none; }
+.spatial-project__arrow { position: absolute; z-index: 6; top: 18px; right: 18px; display: grid; width: 58px; height: 58px; place-items: center; color: #07101d; border: 1px solid rgba(255,255,255,.92); border-radius: 50%; background: #d9ebff; box-shadow: 0 0 0 7px rgba(217,235,255,.09), 0 9px 30px rgba(0,0,0,.32); font: 500 27px/1 "DM Mono", monospace; opacity: 0; transform: scale(.78); transition: opacity .25s, transform .3s cubic-bezier(.2,.8,.2,1), background .2s; }
+.spatial-project.is-current .spatial-project__arrow { opacity: 1; transform: none; }
+.spatial-project.is-current:hover .spatial-project__arrow { background: #fff; transform: translate(3px, -3px) scale(1.06); }
+@media (max-width: 650px) { .spatial-project__arrow { top: 12px; right: 12px; width: 48px; height: 48px; font-size: 22px; } }
