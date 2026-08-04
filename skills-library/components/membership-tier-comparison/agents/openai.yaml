@@ -1,0 +1,4 @@
+interface:
+  display_name: "Membership Tier Comparison"
+  short_description: "Present membership plans with clarity."
+  default_prompt: "Use $membership-tier-comparison to create clear membership plan cards for this website."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Life Stage Navigator"
+  short_description: "Guide visitors to the right program."
+  default_prompt: "Use $life-stage-program-navigator to add a program navigator to this service website."

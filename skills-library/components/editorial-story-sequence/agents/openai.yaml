@@ -1,0 +1,4 @@
+interface:
+  display_name: "Editorial Story Sequence"
+  short_description: "Tell a premium story through scroll."
+  default_prompt: "Use $editorial-story-sequence to structure a premium editorial brand story."

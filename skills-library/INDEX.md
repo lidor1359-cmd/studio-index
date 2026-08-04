@@ -9,6 +9,9 @@
 | [drag-scroll-gallery](./animations/drag-scroll-gallery/SKILL.md) | אנימציה | חקר גלריה בגרירה/גלילה | Siena Film |
 | [project-catalog-registry](./components/project-catalog-registry/SKILL.md) | רכיב | ניהול פרויקטים ממקור נתונים יחיד | WebForge |
 | [spatial-project-focus](./components/spatial-project-focus/SKILL.md) | רכיב | מסגרת זכוכית ועומק מצלמה לפרויקט פעיל | WebForge |
+| [life-stage-program-navigator](./components/life-stage-program-navigator/SKILL.md) | רכיב | בחירת תוכנית לפי צורך או שלב חיים | Maxima Therapy |
+| [membership-tier-comparison](./components/membership-tier-comparison/SKILL.md) | רכיב | השוואת מסלולי חברות ומחיר | Champions for Good |
+| [editorial-story-sequence](./components/editorial-story-sequence/SKILL.md) | רכיב | סיפור מותג פרימיום לפי פרקים | Imperiale Bolgheri |
 
 ## כלל הוספה
 

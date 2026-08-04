@@ -23,3 +23,6 @@ specifications/
 | --- | --- | --- | --- |
 | Bucks Sauce | מותג מזון / מסחר DTC | [bucks-sauce.md](./sites/bucks-sauce.md) | מאופיין |
 | Siena Film | גלריית עבודות קולנועית | [siena-film.md](./sites/siena-film.md) | מאופיין + מיושם ב־WebForge |
+| Maxima Therapy | שירותים ותוכניות לפי שלב חיים | [maxima-therapy.md](./sites/maxima-therapy.md) | מאופיין |
+| Champions for Good | מועדון חברים ומסלולי הצטרפות | [champions-for-good.md](./sites/champions-for-good.md) | מאופיין |
+| Imperiale Bolgheri | מותג פרימיום עריכתי | [imperiale-bolgheri.md](./sites/imperiale-bolgheri.md) | מאופיין |
