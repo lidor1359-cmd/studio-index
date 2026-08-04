@@ -16,7 +16,7 @@ window.WEBFORGE_PROJECTS = [
     alt: 'Milk being poured into a Venizio latte', url: 'https://site-lidor-levins-projects.vercel.app', status: 'live',
   },
   {
-    id: 'kyma-athens', number: '04', name: 'Kýma Athens', category: 'Restaurant', year: '2026', location: 'Athens',
+    id: 'kyma-athens', number: '04', name: 'Kýma Athens', archiveLabel: 'KÝMA', category: 'Restaurant', year: '2026', location: 'Athens',
     summary: 'A cinematic Greek dining experience built around fire, produce and late nights.', image: 'https://athens-restaurant.vercel.app/assets/kyma-hero.png',
     alt: 'A candlelit Greek dinner overlooking Athens', url: 'https://athens-restaurant.vercel.app', status: 'live',
   },

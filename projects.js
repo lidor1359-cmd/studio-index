@@ -16,7 +16,7 @@ directory.innerHTML = projectDirectory.map((project) => {
 const projectSpace = document.querySelector('[data-project-space]');
 const archiveIndex = document.querySelector('[data-archive-index]');
 projectSpace.innerHTML = projectDirectory.map((project, index) => `<article class="spatial-project" data-spatial-project data-name="${project.name}" data-category="${project.category.toUpperCase()}" data-location="${project.location.toUpperCase()}"><img src="${project.image}" alt="${project.alt}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} /><span class="spatial-project__shade"></span><span class="spatial-project__label"><b>${project.number}</b> ${project.name.toUpperCase()}</span><span class="spatial-project__arrow" aria-hidden="true">↗</span><a class="spatial-project__open" href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.name} website in a new tab"></a></article>`).join('');
-archiveIndex.innerHTML = projectDirectory.map((project, index) => `<button class="${index === 0 ? 'is-active' : ''}" type="button" data-archive-target="${index}"><span>${project.number}</span> ${project.name.split(' ').slice(-1)[0].toUpperCase()}</button>`).join('');
+archiveIndex.innerHTML = projectDirectory.map((project, index) => `<button class="${index === 0 ? 'is-active' : ''}" type="button" data-archive-target="${index}"><span>${project.number}</span> ${project.archiveLabel || project.name.split(' ').slice(-1)[0].toUpperCase()}</button>`).join('');
 
 function setMenu(open) {
   menu.classList.toggle('is-open', open);
