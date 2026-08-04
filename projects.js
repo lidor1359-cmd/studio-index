@@ -45,6 +45,12 @@ if ('IntersectionObserver' in window && archiveSlides.length) {
 const spatialStage = document.querySelector('[data-archive-stage]');
 const spatialProjects = [...document.querySelectorAll('[data-spatial-project]')];
 const archiveButtons = [...document.querySelectorAll('[data-archive-target]')];
+projectSpace.addEventListener('click', (event) => {
+  const project = event.target.closest('.spatial-project.is-current');
+  if (!project) return;
+  event.preventDefault();
+  window.location.assign(project.href);
+});
 const archiveReadout = {
   count: document.querySelector('[data-archive-count]'),
   name: document.querySelector('[data-archive-name]'),
