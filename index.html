@@ -17,54 +17,41 @@
       <p class="header-note">SELECTED DIGITAL EXPERIENCES<br /><span>2026</span></p>
     </header>
 
-    <main id="top">
-      <section class="intro" aria-labelledby="page-title">
-        <div class="intro-visual" aria-hidden="true">
-          <div class="intro-orb"><i></i><i></i><i></i></div>
-          <p class="object-label">INTERACTIVE<br />SYSTEM / 01</p>
-          <div class="intro-grid"></div>
-        </div>
-        <div class="intro-scrim" aria-hidden="true"></div>
-        <p class="eyebrow">WebForge / Selected projects</p>
-        <h1 id="page-title">Choose a<br /><em>project.</em></h1>
-        <p class="intro-copy">Each project is a complete world. Choose one to enter its landing page.</p>
-        <span class="intro-scroll">EXPLORE BELOW <i aria-hidden="true">↓</i></span>
-      </section>
-
-      <section class="projects" aria-label="Projects">
-        <div class="gallery-heading">
-          <p>ARCHIVE / 003</p>
-          <h2>Selected<br /><em>worlds.</em></h2>
-          <p class="gallery-instruction"><span class="desktop-instruction">DRAG TO EXPLORE</span><span class="mobile-instruction">SWIPE TO EXPLORE</span> <i aria-hidden="true">→</i></p>
-        </div>
-        <div class="projects-track" data-drag-scroll tabindex="0" aria-label="Drag or scroll to explore projects">
-          <article class="project-card project-card--wide">
-            <a class="project-link" href="https://gitsis-real-estate-lidor-levins-projects.vercel.app" data-project="gitsis-real-estate">
-              <img src="https://gitsis-real-estate-lidor-levins-projects.vercel.app/assets/web/hero.jpg" alt="Coastal villa for Gitsis Real Estate" decoding="async" fetchpriority="high" />
-              <div class="project-overlay"></div>
-              <div class="project-meta"><span>01 / REAL ESTATE</span><span>2026 / CYPRUS</span></div>
-              <div class="project-title"><div><h3>Gitsis<br />Real Estate</h3><p>Private villas and coastal living in Limassol.</p></div><span class="arrow" aria-hidden="true">↗</span></div>
-            </a>
-          </article>
-
-          <article class="project-card project-card--portrait">
-            <a class="project-link" href="https://lidorprivatejets-lidor-levins-projects.vercel.app" data-project="lidorprivatejets">
-              <img src="https://lidorprivatejets-lidor-levins-projects.vercel.app/images/hero-golden.jpg" alt="Private jet above the clouds" loading="lazy" decoding="async" />
-              <div class="project-overlay"></div>
-              <div class="project-meta"><span>02 / AVIATION</span><span>2026 / WORLDWIDE</span></div>
-              <div class="project-title"><div><h3>Lidor<br />Private Jets</h3><p>Private aviation, anywhere in the world.</p></div><span class="arrow" aria-hidden="true">↗</span></div>
-            </a>
-          </article>
-
-          <article class="project-card project-card--portrait">
-            <a class="project-link" href="https://site-lidor-levins-projects.vercel.app" data-project="venizio">
-              <img src="https://site-lidor-levins-projects.vercel.app/assets/og-card.jpg" alt="Venizio espresso machine and cup" loading="lazy" decoding="async" />
-              <div class="project-overlay"></div>
-              <div class="project-meta"><span>03 / HOSPITALITY</span><span>2026 / ISRAEL</span></div>
-              <div class="project-title"><div><h3>Venizio</h3><p>Specialty coffee for Israel's hospitality world.</p></div><span class="arrow" aria-hidden="true">↗</span></div>
-            </a>
-          </article>
-        </div>
+    <main id="top" class="archive">
+      <p class="archive-prompt">SCROLL TO EXPLORE <i aria-hidden="true">↓</i></p>
+      <nav class="archive-index" aria-label="Quick project navigation">
+        <a class="is-active" href="#gitsis"><span>01</span> GITSIS</a>
+        <a href="#jets"><span>02</span> JETS</a>
+        <a href="#venizio"><span>03</span> VENIZIO</a>
+      </nav>
+      <section class="archive-slides" aria-label="Selected projects">
+        <article class="archive-slide" id="gitsis" data-archive-slide>
+          <a class="archive-link" href="https://gitsis-real-estate-lidor-levins-projects.vercel.app">
+            <img src="https://gitsis-real-estate-lidor-levins-projects.vercel.app/assets/web/hero.jpg" alt="Coastal villa for Gitsis Real Estate" fetchpriority="high" />
+            <div class="archive-shade"></div>
+            <p class="archive-number">01 / 03</p>
+            <p class="archive-kind">REAL ESTATE<br />2026 / CYPRUS</p>
+            <div class="archive-copy"><p>Private villas and coastal living in Limassol.</p><h1>Gitsis<br /><em>Real Estate</em></h1><span>ENTER PROJECT <i aria-hidden="true">↗</i></span></div>
+          </a>
+        </article>
+        <article class="archive-slide" id="jets" data-archive-slide>
+          <a class="archive-link" href="https://lidorprivatejets-lidor-levins-projects.vercel.app">
+            <img src="https://lidorprivatejets-lidor-levins-projects.vercel.app/images/hero-golden.jpg" alt="Private jet above the clouds" loading="lazy" />
+            <div class="archive-shade"></div>
+            <p class="archive-number">02 / 03</p>
+            <p class="archive-kind">AVIATION<br />2026 / WORLDWIDE</p>
+            <div class="archive-copy"><p>Private aviation, anywhere in the world.</p><h1>Lidor<br /><em>Private Jets</em></h1><span>ENTER PROJECT <i aria-hidden="true">↗</i></span></div>
+          </a>
+        </article>
+        <article class="archive-slide" id="venizio" data-archive-slide>
+          <a class="archive-link" href="https://site-lidor-levins-projects.vercel.app">
+            <img src="https://site-lidor-levins-projects.vercel.app/assets/og-card.jpg" alt="Venizio espresso machine and cup" loading="lazy" />
+            <div class="archive-shade"></div>
+            <p class="archive-number">03 / 03</p>
+            <p class="archive-kind">HOSPITALITY<br />2026 / ISRAEL</p>
+            <div class="archive-copy"><p>Specialty coffee for Israel’s hospitality world.</p><h1><em>Venizio</em></h1><span>ENTER PROJECT <i aria-hidden="true">↗</i></span></div>
+          </a>
+        </article>
       </section>
     </main>
 

@@ -34,6 +34,18 @@ toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open
 closeButton.addEventListener('click', () => setMenu(false));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
 
+const archiveSlides = [...document.querySelectorAll('[data-archive-slide]')];
+const archiveLinks = [...document.querySelectorAll('.archive-index a')];
+if ('IntersectionObserver' in window && archiveSlides.length) {
+  const archiveObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      archiveLinks.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
+    });
+  }, { threshold: .62 });
+  archiveSlides.forEach((slide) => archiveObserver.observe(slide));
+}
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const projectLinks = [...document.querySelectorAll('.project-link')];
 
