@@ -12,6 +12,7 @@
 | [life-stage-program-navigator](./components/life-stage-program-navigator/SKILL.md) | רכיב | בחירת תוכנית לפי צורך או שלב חיים | Maxima Therapy |
 | [membership-tier-comparison](./components/membership-tier-comparison/SKILL.md) | רכיב | השוואת מסלולי חברות ומחיר | Champions for Good |
 | [editorial-story-sequence](./components/editorial-story-sequence/SKILL.md) | רכיב | סיפור מותג פרימיום לפי פרקים | Imperiale Bolgheri |
+| [restaurant-menu-showcase](./components/restaurant-menu-showcase/SKILL.md) | רכיב | הצגת מנות דגל עם תמונה, קטגוריה ומחיר | Kýma Athens |
 
 ## כלל הוספה
 

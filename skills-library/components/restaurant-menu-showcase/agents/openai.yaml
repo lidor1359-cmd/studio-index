@@ -1,0 +1,4 @@
+interface:
+  display_name: "Restaurant Menu Showcase"
+  short_description: "Build visual restaurant menu cards"
+  default_prompt: "Use $restaurant-menu-showcase to create a polished restaurant menu section."
