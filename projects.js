@@ -66,8 +66,8 @@ if (spatialStage && spatialProjects.length) {
     spatialProjects.forEach((project, index) => {
       const distance = index - position;
       const absoluteDistance = Math.abs(distance);
-      project.style.setProperty('--space-x', (distance * 58).toFixed(2));
-      project.style.setProperty('--space-y', (distance * -5).toFixed(2));
+      project.style.setProperty('--space-x', (distance * 4).toFixed(2));
+      project.style.setProperty('--space-y', (distance * -92).toFixed(2));
       project.style.setProperty('--space-z', `${Math.round(-absoluteDistance * 280)}px`);
       project.style.setProperty('--space-scale', Math.max(.62, 1 - absoluteDistance * .18).toFixed(3));
       project.style.setProperty('--space-opacity', absoluteDistance > 1.5 ? '0' : Math.max(.26, 1 - absoluteDistance * .5).toFixed(2));

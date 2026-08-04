@@ -19,7 +19,7 @@ The main goal is to let visitors explore several visual projects, then enter a p
 2. Make each entire card a semantic link.
 3. Use a large cover image, then show only essential metadata over it.
 4. Keep the initial view focused on projects; move secondary studio information below the gallery.
-5. Use horizontal/drag exploration on wide screens only when standard scroll and links remain available.
+5. Choose one intentional movement axis. For a cinematic archive, vertical entry (top → centre → bottom) often feels more natural than a side-to-side carousel.
 
 ## Responsive and accessible behavior
 
