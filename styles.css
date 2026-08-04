@@ -31,7 +31,8 @@
 .spatial-project.is-current { z-index: 2; pointer-events: auto; cursor: pointer; touch-action: manipulation; }
 .spatial-project__open { position: absolute; z-index: 10; inset: 0; display: block; }
 .spatial-project::after { display: none; }
-.spatial-project__arrow { position: absolute; z-index: 6; top: 18px; right: 18px; display: grid; width: 58px; height: 58px; place-items: center; color: #07101d; border: 1px solid rgba(255,255,255,.92); border-radius: 50%; background: #d9ebff; box-shadow: 0 0 0 7px rgba(217,235,255,.09), 0 9px 30px rgba(0,0,0,.32); font: 500 27px/1 "DM Mono", monospace; opacity: 0; transform: scale(.78); transition: opacity .25s, transform .3s cubic-bezier(.2,.8,.2,1), background .2s; }
-.spatial-project.is-current .spatial-project__arrow { opacity: 1; transform: none; }
-.spatial-project.is-current:hover .spatial-project__arrow { background: #fff; transform: translate(3px, -3px) scale(1.06); }
-@media (max-width: 650px) { .spatial-project__arrow { top: 12px; right: 12px; width: 48px; height: 48px; font-size: 22px; } }
+.spatial-project__arrow { display: none; }
+.archive-open-current { position: absolute; z-index: 30; display: grid; width: 62px; height: 62px; place-items: center; color: #07101d; border: 1px solid rgba(255,255,255,.95); border-radius: 50%; background: #d9ebff; box-shadow: 0 0 0 8px rgba(217,235,255,.1), 0 12px 34px rgba(0,0,0,.38); font: 500 28px/1 "DM Mono", monospace; text-decoration: none; transform: translateZ(0); transition: left .12s linear, top .12s linear, background .2s, transform .2s; touch-action: manipulation; pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.archive-open-current::before { position: absolute; inset: -12px; border-radius: 50%; content: ''; }
+.archive-open-current:hover, .archive-open-current:focus-visible { background: #fff; outline: 2px solid #fff; outline-offset: 5px; transform: translate(3px, -3px) scale(1.06); }
+@media (max-width: 650px) { .archive-open-current { width: 50px; height: 50px; font-size: 22px; } }

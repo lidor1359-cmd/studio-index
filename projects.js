@@ -45,6 +45,7 @@ if ('IntersectionObserver' in window && archiveSlides.length) {
 const spatialStage = document.querySelector('[data-archive-stage]');
 const spatialProjects = [...document.querySelectorAll('[data-spatial-project]')];
 const archiveButtons = [...document.querySelectorAll('[data-archive-target]')];
+const archiveOpen = document.querySelector('[data-archive-open]');
 const archiveReadout = {
   count: document.querySelector('[data-archive-count]'),
   name: document.querySelector('[data-archive-name]'),
@@ -54,6 +55,13 @@ const archiveReadout = {
 if (spatialStage && spatialProjects.length) {
   spatialStage.style.height = `${110 + (spatialProjects.length - 1) * 110}svh`;
   let activeProject = -1;
+  const positionArchiveOpen = () => {
+    const activeBounds = spatialProjects[activeProject]?.getBoundingClientRect();
+    if (!activeBounds || !archiveOpen) return;
+    const openSize = window.innerWidth <= 650 ? 50 : 62;
+    archiveOpen.style.left = `${Math.min(window.innerWidth - openSize - 12, Math.max(12, activeBounds.right - openSize - 18))}px`;
+    archiveOpen.style.top = `${Math.min(window.innerHeight - openSize - 12, Math.max(72, activeBounds.top + 18))}px`;
+  };
   const updateSpatialArchive = () => {
     const bounds = spatialStage.getBoundingClientRect();
     const range = Math.max(1, spatialStage.offsetHeight - window.innerHeight);
@@ -85,13 +93,19 @@ if (spatialStage && spatialProjects.length) {
       archiveReadout.name.textContent = project.dataset.name;
       archiveReadout.category.textContent = project.dataset.category;
       archiveReadout.location.textContent = project.dataset.location;
+      if (archiveOpen) {
+        archiveOpen.href = projectDirectory[activeProject].url;
+        archiveOpen.setAttribute('aria-label', `Open ${project.dataset.name} in a new tab`);
+      }
     }
+    positionArchiveOpen();
   };
   let archiveFrame;
   window.addEventListener('scroll', () => {
     cancelAnimationFrame(archiveFrame);
     archiveFrame = requestAnimationFrame(updateSpatialArchive);
   }, { passive: true });
+  window.addEventListener('resize', updateSpatialArchive, { passive: true });
   archiveButtons.forEach((button) => button.addEventListener('click', () => {
     const index = Number(button.dataset.archiveTarget);
     const top = spatialStage.offsetTop + (spatialStage.offsetHeight - window.innerHeight) * (index / (spatialProjects.length - 1));
@@ -106,12 +120,14 @@ if (spatialStage && spatialProjects.length) {
       if (!project) return;
       project.style.setProperty('--camera-x', `${(x * 2.2).toFixed(2)}deg`);
       project.style.setProperty('--camera-y', `${(-y * 1.5).toFixed(2)}deg`);
+      positionArchiveOpen();
     });
     spatialStage.addEventListener('pointerleave', () => {
       const project = spatialProjects[activeProject];
       if (!project) return;
       project.style.setProperty('--camera-x', '0deg');
       project.style.setProperty('--camera-y', '0deg');
+      positionArchiveOpen();
     });
   }
   updateSpatialArchive();
