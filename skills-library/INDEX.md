@@ -7,6 +7,7 @@
 | [cinematic-project-gallery](./components/cinematic-project-gallery/SKILL.md) | רכיב | הצגת פרויקטים כגלריה ויזואלית | Siena Film |
 | [project-metadata-card](./components/project-metadata-card/SKILL.md) | רכיב | כרטיס פרויקט עם פרטי עומק | Siena Film |
 | [drag-scroll-gallery](./animations/drag-scroll-gallery/SKILL.md) | אנימציה | חקר גלריה בגרירה/גלילה | Siena Film |
+| [project-catalog-registry](./components/project-catalog-registry/SKILL.md) | רכיב | ניהול פרויקטים ממקור נתונים יחיד | WebForge |
 
 ## כלל הוספה
 

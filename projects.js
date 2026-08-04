@@ -1,26 +1,22 @@
-// One source of truth for project destinations.
-window.STUDIO_PROJECTS = {
-  hub: { local: './index.html', production: 'https://studio-hub-nu.vercel.app' },
-  'gitsis-real-estate': { local: '../gitsis-real-estate/index.html', production: 'https://gitsis-real-estate-lidor-levins-projects.vercel.app' },
-  lidorprivatejets: { local: '../lidorprivatejets/dist/index.html', production: 'https://lidorprivatejets-lidor-levins-projects.vercel.app' },
-  venizio: { local: '../venizio/site/index.html', production: 'https://site-lidor-levins-projects.vercel.app' },
-};
-
-const projectDirectory = [
-  { key: 'gitsis-real-estate', name: 'Gitsis Real Estate', type: 'Real estate', image: 'https://gitsis-real-estate-lidor-levins-projects.vercel.app/assets/web/hero.jpg' },
-  { key: 'lidorprivatejets', name: 'Lidor Private Jets', type: 'Aviation', image: 'https://lidorprivatejets-lidor-levins-projects.vercel.app/images/hero-golden.jpg' },
-  { key: 'venizio', name: 'Venizio', type: 'Hospitality', image: 'https://site-lidor-levins-projects.vercel.app/assets/og-card.jpg' },
-];
+const projectDirectory = window.WEBFORGE_PROJECTS;
+window.STUDIO_PROJECTS = Object.fromEntries([
+  ['hub', { local: './index.html', production: 'https://webforge-index.vercel.app' }],
+  ...projectDirectory.map((project) => [project.id, { production: project.url }]),
+]);
 
 const menu = document.querySelector('.projects-menu');
 const toggle = document.querySelector('.projects-toggle');
 const closeButton = document.querySelector('.projects-menu__close');
 const directory = document.querySelector('.projects-menu__links');
 
-directory.innerHTML = projectDirectory.map(({ key, name, type, image }, index) => {
-  const url = window.STUDIO_PROJECTS[key].production;
-  return `<a href="${url}" style="--preview: url('${image}')"><span>${String(index + 1).padStart(2, '0')} / ${type}</span>${name}<span aria-hidden="true">↗</span></a>`;
+directory.innerHTML = projectDirectory.map((project) => {
+  return `<a href="${project.url}" style="--preview: url('${project.image}')"><span>${project.number} / ${project.category}</span>${project.name}<span aria-hidden="true">↗</span></a>`;
 }).join('');
+
+const projectSpace = document.querySelector('[data-project-space]');
+const archiveIndex = document.querySelector('[data-archive-index]');
+projectSpace.innerHTML = projectDirectory.map((project, index) => `<a class="spatial-project" data-spatial-project data-name="${project.name}" data-category="${project.category.toUpperCase()}" data-location="${project.location.toUpperCase()}" href="${project.url}"><img src="${project.image}" alt="${project.alt}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} /><span class="spatial-project__shade"></span><span class="spatial-project__label"><b>${project.number}</b> ${project.name.toUpperCase()} <i>↗</i></span></a>`).join('');
+archiveIndex.innerHTML = projectDirectory.map((project, index) => `<button class="${index === 0 ? 'is-active' : ''}" type="button" data-archive-target="${index}"><span>${project.number}</span> ${project.name.split(' ').slice(-1)[0].toUpperCase()}</button>`).join('');
 
 function setMenu(open) {
   menu.classList.toggle('is-open', open);
@@ -56,6 +52,7 @@ const archiveReadout = {
   location: document.querySelector('[data-archive-location]'),
 };
 if (spatialStage && spatialProjects.length) {
+  spatialStage.style.height = `${110 + (spatialProjects.length - 1) * 110}svh`;
   let activeProject = -1;
   const updateSpatialArchive = () => {
     const bounds = spatialStage.getBoundingClientRect();
