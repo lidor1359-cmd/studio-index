@@ -15,4 +15,9 @@ window.WEBFORGE_PROJECTS = [
     summary: 'Specialty coffee for Israel’s hospitality world.', image: 'https://site-lidor-levins-projects.vercel.app/assets/og-card.jpg',
     alt: 'Venizio espresso machine and cup', url: 'https://site-lidor-levins-projects.vercel.app', status: 'live',
   },
+  {
+    id: 'kyma-athens', number: '04', name: 'Kýma Athens', category: 'Restaurant', year: '2026', location: 'Athens',
+    summary: 'A cinematic Greek dining experience built around fire, produce and late nights.', image: 'https://athens-restaurant.vercel.app/assets/kyma-hero.png',
+    alt: 'A candlelit Greek dinner overlooking Athens', url: 'https://athens-restaurant.vercel.app', status: 'live',
+  },
 ];
