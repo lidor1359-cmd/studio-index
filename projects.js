@@ -74,7 +74,12 @@ if (spatialStage && spatialProjects.length) {
     if (nextActive !== activeProject) {
       activeProject = nextActive;
       const project = spatialProjects[activeProject];
-      spatialProjects.forEach((item, index) => item.classList.toggle('is-current', index === activeProject));
+      spatialProjects.forEach((item, index) => {
+        const isCurrent = index === activeProject;
+        item.classList.toggle('is-current', isCurrent);
+        item.setAttribute('aria-hidden', String(!isCurrent));
+        item.tabIndex = isCurrent ? 0 : -1;
+      });
       archiveButtons.forEach((button, index) => button.classList.toggle('is-active', index === activeProject));
       archiveReadout.count.textContent = `${String(activeProject + 1).padStart(2, '0')} / ${String(spatialProjects.length).padStart(2, '0')}`;
       archiveReadout.name.textContent = project.dataset.name;
