@@ -15,7 +15,7 @@ directory.innerHTML = projectDirectory.map((project) => {
 
 const projectSpace = document.querySelector('[data-project-space]');
 const archiveIndex = document.querySelector('[data-archive-index]');
-projectSpace.innerHTML = projectDirectory.map((project, index) => `<a class="spatial-project" data-spatial-project data-name="${project.name}" data-category="${project.category.toUpperCase()}" data-location="${project.location.toUpperCase()}" href="${project.url}"><img src="${project.image}" alt="${project.alt}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} /><span class="spatial-project__shade"></span><span class="spatial-project__label"><b>${project.number}</b> ${project.name.toUpperCase()} <i>↗</i></span></a>`).join('');
+projectSpace.innerHTML = projectDirectory.map((project, index) => `<article class="spatial-project" data-spatial-project data-name="${project.name}" data-category="${project.category.toUpperCase()}" data-location="${project.location.toUpperCase()}"><img src="${project.image}" alt="${project.alt}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} /><span class="spatial-project__shade"></span><span class="spatial-project__label"><b>${project.number}</b> ${project.name.toUpperCase()} <i aria-hidden="true">↗</i></span><a class="spatial-project__open" href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.name} website in a new tab"></a></article>`).join('');
 archiveIndex.innerHTML = projectDirectory.map((project, index) => `<button class="${index === 0 ? 'is-active' : ''}" type="button" data-archive-target="${index}"><span>${project.number}</span> ${project.name.split(' ').slice(-1)[0].toUpperCase()}</button>`).join('');
 
 function setMenu(open) {
@@ -45,12 +45,6 @@ if ('IntersectionObserver' in window && archiveSlides.length) {
 const spatialStage = document.querySelector('[data-archive-stage]');
 const spatialProjects = [...document.querySelectorAll('[data-spatial-project]')];
 const archiveButtons = [...document.querySelectorAll('[data-archive-target]')];
-projectSpace.addEventListener('click', (event) => {
-  const project = event.target.closest('.spatial-project.is-current');
-  if (!project) return;
-  event.preventDefault();
-  window.location.assign(project.href);
-});
 const archiveReadout = {
   count: document.querySelector('[data-archive-count]'),
   name: document.querySelector('[data-archive-name]'),
@@ -84,7 +78,7 @@ if (spatialStage && spatialProjects.length) {
         const isCurrent = index === activeProject;
         item.classList.toggle('is-current', isCurrent);
         item.setAttribute('aria-hidden', String(!isCurrent));
-        item.tabIndex = isCurrent ? 0 : -1;
+        item.querySelector('.spatial-project__open').tabIndex = isCurrent ? 0 : -1;
       });
       archiveButtons.forEach((button, index) => button.classList.toggle('is-active', index === activeProject));
       archiveReadout.count.textContent = `${String(activeProject + 1).padStart(2, '0')} / ${String(spatialProjects.length).padStart(2, '0')}`;
