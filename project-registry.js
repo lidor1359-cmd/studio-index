@@ -17,7 +17,7 @@ window.WEBFORGE_PROJECTS = [
   },
   {
     id: 'kyma-athens', number: '04', name: 'Kýma Athens', archiveLabel: 'KÝMA', category: 'Restaurant', year: '2026', location: 'Athens',
-    summary: 'A cinematic Greek dining experience with eight contemporary plates shaped by fire, sea and late-night Athens.', image: 'https://athens-restaurant.vercel.app/assets/kyma-grouper.webp',
+    summary: 'A reservation-focused Greek dining experience with eight contemporary plates shaped by fire, sea and late-night Athens.', image: 'https://athens-restaurant.vercel.app/assets/kyma-grouper.webp',
     alt: 'Coal-roasted white grouper from the expanded Kýma Athens menu', url: 'https://athens-restaurant.vercel.app', status: 'live',
   },
   {
