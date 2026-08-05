@@ -17,8 +17,8 @@ window.WEBFORGE_PROJECTS = [
   },
   {
     id: 'kyma-athens', number: '04', name: 'Kýma Athens', archiveLabel: 'KÝMA', category: 'Restaurant', year: '2026', location: 'Athens',
-    summary: 'A cinematic Greek dining experience built around fire, produce and late nights.', image: 'https://athens-restaurant.vercel.app/assets/kyma-acropolis-night.avif',
-    alt: 'Guests dining beneath the illuminated Acropolis at night', url: 'https://athens-restaurant.vercel.app', status: 'live',
+    summary: 'A cinematic Greek dining experience with eight contemporary plates shaped by fire, sea and late-night Athens.', image: 'https://athens-restaurant.vercel.app/assets/kyma-grouper.webp',
+    alt: 'Coal-roasted white grouper from the expanded Kýma Athens menu', url: 'https://athens-restaurant.vercel.app', status: 'live',
   },
   {
     id: 'dan-liples-architecture', number: '05', name: 'Dan Liples Architecture', archiveLabel: 'LIPLES', category: 'Architecture', year: '2026', location: 'Be’er Sheva',
