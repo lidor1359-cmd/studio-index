@@ -25,4 +25,9 @@ window.WEBFORGE_PROJECTS = [
     summary: 'A refined Hebrew portfolio for private architecture, villas and interior design.', image: './assets/dan-liples-villa.webp',
     alt: 'Modern private villa designed by Dan Liples Architecture', url: 'https://dan-liples-architecture.vercel.app', status: 'live',
   },
+  {
+    id: 'yuval-tsarfati', number: '06', name: 'ReadyAction by Yuval Tsarfati', archiveLabel: 'READYACTION', category: 'Personal Branding', year: '2026', location: 'Israel',
+    summary: 'A bold Hebrew conversion experience for video-led personal branding.', image: 'https://yuval-tsarfati.vercel.app/og-warhol.png',
+    alt: 'ReadyAction personal branding experience by Yuval Tsarfati', url: 'https://yuval-tsarfati.vercel.app', status: 'live',
+  },
 ];
