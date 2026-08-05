@@ -27,7 +27,7 @@ window.WEBFORGE_PROJECTS = [
   },
   {
     id: 'yuval-tsarfati', number: '06', name: 'ReadyAction by Yuval Tsarfati', archiveLabel: 'READYACTION', category: 'Personal Branding', year: '2026', location: 'Israel',
-    summary: 'A bold Hebrew conversion experience for video-led personal branding.', image: 'https://yuval-tsarfati.vercel.app/og-warhol.png',
-    alt: 'ReadyAction personal branding experience by Yuval Tsarfati', url: 'https://yuval-tsarfati.vercel.app', status: 'live',
+    summary: 'A bold Hebrew conversion experience for video-led personal branding.', image: 'https://readyaction-yuval.vercel.app/og-warhol.png',
+    alt: 'ReadyAction personal branding experience by Yuval Tsarfati', url: 'https://readyaction-yuval.vercel.app', status: 'live',
   },
 ];
