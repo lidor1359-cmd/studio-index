@@ -20,4 +20,9 @@ window.WEBFORGE_PROJECTS = [
     summary: 'A cinematic Greek dining experience built around fire, produce and late nights.', image: 'https://athens-restaurant.vercel.app/assets/kyma-acropolis-night.avif',
     alt: 'Guests dining beneath the illuminated Acropolis at night', url: 'https://athens-restaurant.vercel.app', status: 'live',
   },
+  {
+    id: 'dan-liples-architecture', number: '05', name: 'Dan Liples Architecture', archiveLabel: 'LIPLES', category: 'Architecture', year: '2026', location: 'Be’er Sheva',
+    summary: 'A refined Hebrew portfolio for private architecture, villas and interior design.', image: './assets/dan-liples-villa.webp',
+    alt: 'Modern private villa designed by Dan Liples Architecture', url: 'https://dan-liples-architecture.vercel.app', status: 'live',
+  },
 ];
