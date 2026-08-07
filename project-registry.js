@@ -33,6 +33,6 @@ window.WEBFORGE_PROJECTS = [
   {
     id: 'nova-growth', number: '07', name: 'NOVA Growth Systems', archiveLabel: 'NOVA', category: 'Growth Systems', year: '2026', location: 'Israel / Worldwide',
     summary: 'A cinematic 3D growth system connecting strategy, conversion, measurement, CRM and automation.', image: 'https://nova-growth-three.vercel.app/og.png',
-    alt: 'NOVA cinematic growth system experience', url: 'https://nova-growth-three.vercel.app', status: 'live',
+    alt: 'NOVA cinematic growth system experience', url: 'https://nova-growth-three.vercel.app', status: 'live', frame: 'cinematic',
   },
 ];

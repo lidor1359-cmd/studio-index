@@ -36,3 +36,69 @@
 .archive-open-current::before { position: absolute; inset: -12px; border-radius: 50%; content: ''; }
 .archive-open-current:hover, .archive-open-current:focus-visible { background: #fff; outline: 2px solid #fff; outline-offset: 5px; transform: translate(3px, -3px) scale(1.06); }
 @media (max-width: 650px) { .archive-open-current { width: 50px; height: 50px; font-size: 22px; } }
+
+/* Archive composition: reserve a stable information rail and keep cinematic artwork intact. */
+@media (min-width: 651px) {
+  .spatial-project {
+    left: 60%;
+    width: min(55vw, 1040px);
+    max-height: 72svh;
+  }
+
+  .archive-readout {
+    bottom: 9.5vh;
+    width: min(22vw, 250px);
+    max-width: none;
+  }
+
+  .archive-readout strong {
+    font-size: clamp(30px, 3vw, 52px);
+    overflow-wrap: normal;
+  }
+}
+
+.spatial-project--cinematic {
+  aspect-ratio: 1.924;
+  background: #030506;
+}
+
+.spatial-project--cinematic > img {
+  object-fit: contain;
+  object-position: center;
+  filter: saturate(.92) contrast(1.04);
+  transform: scale(.985);
+}
+
+.spatial-project--cinematic:hover > img {
+  filter: saturate(1) contrast(1.07);
+  transform: scale(1.015);
+}
+
+.spatial-project--cinematic .spatial-project__shade {
+  background: linear-gradient(180deg, rgba(2, 4, 7, .03) 56%, rgba(2, 4, 7, .58));
+}
+
+@media (max-width: 650px) {
+  .spatial-project {
+    top: 43%;
+    width: calc(100vw - 32px);
+    max-height: 55svh;
+  }
+
+  .spatial-project--cinematic {
+    aspect-ratio: 1.58;
+  }
+
+  .spatial-project--cinematic > img {
+    object-fit: contain;
+  }
+
+  .archive-readout {
+    bottom: 12.5vh;
+    max-width: min(72vw, 260px);
+  }
+
+  .archive-readout strong {
+    font-size: clamp(29px, 9vw, 42px);
+  }
+}
