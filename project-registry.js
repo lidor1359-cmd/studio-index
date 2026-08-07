@@ -30,4 +30,9 @@ window.WEBFORGE_PROJECTS = [
     summary: 'A bold Hebrew conversion experience for video-led personal branding.', image: 'https://readyaction-yuval.vercel.app/og-warhol.png',
     alt: 'ReadyAction personal branding experience by Yuval Tsarfati', url: 'https://readyaction-yuval.vercel.app', status: 'live',
   },
+  {
+    id: 'nova-growth', number: '07', name: 'NOVA Growth Systems', archiveLabel: 'NOVA', category: 'Growth Systems', year: '2026', location: 'Israel / Worldwide',
+    summary: 'A cinematic 3D growth system connecting strategy, conversion, measurement, CRM and automation.', image: 'https://nova-growth-three.vercel.app/og.png',
+    alt: 'NOVA cinematic growth system experience', url: 'https://nova-growth-three.vercel.app', status: 'live',
+  },
 ];
