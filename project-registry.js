@@ -35,4 +35,9 @@ window.WEBFORGE_PROJECTS = [
     summary: 'A cinematic 3D growth system connecting strategy, conversion, measurement, CRM and automation.', image: 'https://nova-growth-three.vercel.app/og.png',
     alt: 'NOVA cinematic growth system experience', url: 'https://nova-growth-three.vercel.app', status: 'live', frame: 'cinematic',
   },
+  {
+    id: 'nails-by-revital', number: '08', name: 'Nails by Revital', archiveLabel: 'REVITAL', category: 'Beauty', year: '2026', location: 'Be’er Sheva',
+    summary: 'A cinematic lead-generation experience for Revital’s gel nail studio in Be’er Sheva.', image: './assets/nails-by-revital.jpg',
+    alt: 'Warm, refined Nails by Revital studio entrance', url: 'https://nails-by-revital.lidor1359.chatgpt.site', status: 'live', frame: 'cinematic',
+  },
 ];
